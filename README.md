@@ -1,49 +1,42 @@
 <a name="readme-top"></a>
 
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
-
-# Reservation Cancellation Forecasting: a Senior Machine Learning Engineer assignment
+# Dry Beans Classifier: a Project using ML-Flow & Airflow 
 
 ![Pipelines](images/ml_pipelines.png)
 
-In this repository, you'll find a project I handled during a Machine Learning assignment for a leader in the short-term rental industry. 
+In this repository, you'll find a project that classifies betweem 7 different types of beans with various shapes and features.
 
-The objective of this assignment was clear: 
-* Build a Machine Learning model to predict whether a reservation is likely to be cancelled,
+The objective of this assignment is clear: 
+* Build a Machine Learning model to classify the beans,
 * Develop an MLOps architecture designed for a production environment.
 
 To accomplish this task, **Airflow** and **Mlflow** are used to build Machine Learning Pipelines, fully customizable and ready for a production environment.
 
-This Github repo comes with a complete article published in the [Towards Data Science](https://towardsdatascience.com/) journal on Medium:
+#TODO This Github repo is forked and retrofitted for this project, from [Jeremy's ML assignement work](https://github.com/jeremyarancio/reservation_cancellation_prediction) so all credit goes to him! Also do checkout his article on [Medium](https://medium.com/towards-data-science/build-machine-learning-pipelines-with-airflow-and-mlflow-reservation-cancellation-forecasting-da675d409842) explaining his work. 
 
-## Article link
-
-[Build Machine Learning Pipelines with Airflow and Mlflow: Reservation Cancellation Forecasting.](https://medium.com/towards-data-science/build-machine-learning-pipelines-with-airflow-and-mlflow-reservation-cancellation-forecasting-da675d409842)
-
+#TODO remove the csv file or include it?
 ## Code organization
 
 ```sh
 .
 ├── README.md
 ├── airflow
-│   ├── dags
-│   │   ├── inference_pipeline.py
-│   │   └── training_pipeline.py
+│   └── dags
+│       ├── inference_pipeline.py
+│       └── training_pipeline.py
 ├── artifacts
 ├── data
 │   ├── features_store
 │   ├── preprocessed
-│   ├── hotel_bookings.parquet
+│   ├── dry_bean.parquet
 │   └── sample_for_inference.parquet
 ├── mlflow
 ├── notebooks
 │   ├── 0_exploratory_data_analysis.ipynb
-│   └── 1_preprocessed_data_check.ipynb
 ├── requirements.txt
 └── steps
     ├── condition_step.py
@@ -65,7 +58,7 @@ The repository is structured as follows:
 * In the *data* folder is located the original dataset that was provided for this assignement, in addition of a sample for batch prediction. *data/features_store* and *data/preprocessed* are directories to store the data once processed by some stages of the pipelines, such as **preprocessing** or **features_engineering** steps.
 * The same idea for *artifacts* that contains **encoders** generated during the **features_engineering** step.
 
-
+#TODO is the preprocessed step necessary.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -105,9 +98,7 @@ Don't forget to give the project a star! Thanks again!
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[linkedin-url]: https://www.linkedin.com/in/jeremy-arancio/
+[linkedin-url]: https://www.linkedin.com/in/isadoseri/
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[stars-shield]: https://img.shields.io/github/stars/jeremyarancio/reservation_cancellation_prediction.svg?style=for-the-badge
-[stars-url]: https://github.com/jeremyarancio/reservation_cancellation_prediction/stargazers
 [forks-shield]: https://img.shields.io/github/forks/jeremyarancio/reservation_cancellation_prediction.svg?style=for-the-badge
 [forks-url]: https://github.com/jeremyarancio/reservation_cancellation_prediction/network/members
