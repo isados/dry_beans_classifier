@@ -31,7 +31,6 @@ class PreprocessStep:
         """
 
         preprocessed_df = pd.read_parquet(data_path)
-        # preprocessed_df = self._preprocess(preprocessed_df)
 
         if not self.inference_mode:
             train_df = preprocessed_df.sample(
@@ -43,12 +42,3 @@ class PreprocessStep:
 
         if self.inference_mode:
             preprocessed_df.to_parquet(self.preprocessing_data.batch_path, index=False)
-
-    @staticmethod
-    def _preprocess(df: pd.DataFrame) -> pd.DataFrame:
-        """Preprocessing."""
-        df["children"].fillna(0, inplace=True)
-        df["country"].fillna("Unknown", inplace=True)
-        df["agent"].fillna(0, inplace=True)
-        df["company"].fillna(0, inplace=True)
-        return df
